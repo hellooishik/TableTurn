@@ -1,0 +1,208 @@
+/* App.css */
+.App {
+  margin-top: 40vh;
+  text-align: center;
+}
+
+table {
+  width: 50%;
+  margin: auto;
+  border-collapse: collapse;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInUp 0.5s forwards;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+th, td, table {
+  border: 1px solid black;
+}
+
+h1 {
+  text-align: center;
+  color: #4CAF50;
+}
+
+.button {
+  margin: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animation {
+  margin: 20px;
+  font-size: 24px;
+  color: #4CAF50;
+  cursor: pointer;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Popup css only  */
+.popup-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.popup h2 {
+  margin-bottom: 10px;
+}
+
+.popup-option {
+  margin: 10px 0;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.close-popup {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+/* Styling for Go Back button */
+.go-back {
+  bottom: -3vh;
+  margin-left: 50vh;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.go-back:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for animated bubbles */
+.bubbles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.bubble {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  animation: bubble-float 5s infinite ease-in-out;
+}
+
+@keyframes bubble-float {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-50px) rotate(360deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0) rotate(720deg);
+    opacity: 1;
+  }
+}
+
+/* Styling for typing input */
+.input-field {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #f8f9fa;
+  margin-top: 20px;
+}
+
+/* Styling for code snippet */
+.code-snippet {
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.code-snippet pre {
+  margin: 0;
+}
+
+.code-snippet code {
+  display: block;
+  padding: 10px;
+  white-space: pre-wrap;
+}
