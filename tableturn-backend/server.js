@@ -11,9 +11,10 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cors());
 
+mongoose;
 mongoose
   .connect(
-    "mongodb+srv://oishikme112:oishikme112@cluster0.idxvuuw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+    "mongodb+srv://oishikme112:bulid112@tableturndb.67okfbp.mongodb.net/?retryWrites=true&w=majority&appName=TableTurnDb",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -21,6 +22,7 @@ mongoose
   )
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
+
 // Routes
 app.use("/api/auth", require("./routes/auth"));
 
