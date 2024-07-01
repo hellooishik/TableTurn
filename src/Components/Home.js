@@ -1,19 +1,12 @@
-// Home.js
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import itemsSold from "../takeinput";
 import TableStruct from "../TableStruct";
 import "../App.css";
 
 const Home = ({ user, setUser }) => {
-  const [showTable, setShowTable] = useState(false);
+  const [showTable, setShowTable] = useState(true);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!user) {
-      navigate("/login");
-    }
-  }, [user, navigate]);
 
   const handleLogout = () => {
     setUser(null);
@@ -24,10 +17,6 @@ const Home = ({ user, setUser }) => {
     (acc, item) => acc + item.price * item.qty,
     0
   );
-
-  if (!user) {
-    return null; // Prevent rendering if not authenticated
-  }
 
   return (
     <div className="App">
@@ -46,35 +35,43 @@ const Home = ({ user, setUser }) => {
             <li>
               <Link to="/contact">Contact</Link>
             </li>
+            {!user && (
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+            )}
+            {user && (
+              <li>
+                <button className="button" onClick={handleLogout}>
+                  Logout
+                </button>
+              </li>
+            )}
           </ul>
-          <button className="button" onClick={handleLogout}>
-            Logout
-          </button>
         </nav>
       </header>
 
       <section className="hero">
         <div className="hero-content">
-          <h1>Welcome to TableTurn</h1>
+          <h1>Welcome to TableTurn{user && `, ${user.email}`}</h1>
           <p>
             Your ultimate platform for React project showcases and source code
             distribution.
           </p>
-          {user && <p>Logged in as: {user.email}</p>}
-          {!showTable ? (
-            <div
-              className="button animation"
-              onClick={() => setShowTable(true)}
-            >
-              Show My Project
-            </div>
-          ) : (
-            <>
-              <TableStruct itemsSold={itemsSold} totalRevenue={totalRevenue} />
-            </>
-          )}
+          <div
+            className="button animation"
+            onClick={() => setShowTable(!showTable)}
+          >
+            {showTable ? "Hide My Projects" : "Show My Projects"}
+          </div>
         </div>
       </section>
+
+      {showTable && (
+        <section className="project-table">
+          <TableStruct itemsSold={itemsSold} totalRevenue={totalRevenue} />
+        </section>
+      )}
 
       <section className="slider">
         <div className="slide">

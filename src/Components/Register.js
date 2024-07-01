@@ -1,5 +1,4 @@
 import { useState } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Register = ({ setIsAuthenticated }) => {
@@ -11,11 +10,21 @@ const Register = ({ setIsAuthenticated }) => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/register", {
-        email,
-        password,
+      const res = await fetch("http://localhost:5000/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
       });
-      localStorage.setItem("token", res.data.token);
+
+      if (!res.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const data = await res.json();
+
+      // Assuming the response indicates success, set the user as authenticated
       setIsAuthenticated(true);
       setEmail(""); // Clear email input after successful registration
       setPassword(""); // Clear password input after successful registration

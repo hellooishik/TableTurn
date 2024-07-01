@@ -1,33 +1,45 @@
-// src/routes/auth.js
+// routes/auth.js
 
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
-const User = require("../models/User"); // Assuming you have a User model
+const jwt = require("jsonwebtoken");
+const User = require("../models/User");
 
-router.post("/register", async (req, res) => {
+router.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
   try {
+    // Check if the user exists
     let user = await User.findOne({ email });
 
-    if (user) {
-      return res.status(400).json({ msg: "User already exists" });
+    if (!user) {
+      return res.status(400).json({ msg: "Invalid credentials" });
     }
 
-    user = new User({
-      email,
-      password,
-    });
+    // Validate password
+    const isMatch = await bcrypt.compare(password, user.password);
 
-    // Hash password before saving in database
-    const salt = await bcrypt.genSalt(10);
-    user.password = await bcrypt.hash(password, salt);
+    if (!isMatch) {
+      return res.status(400).json({ msg: "Invalid credentials" });
+    }
 
-    await user.save();
+    // Generate JWT token
+    const payload = {
+      user: {
+        id: user.id,
+      },
+    };
 
-    // You may want to generate a JWT token here for authentication
-    res.json({ token: "dummy_token" }); // Replace with actual token logic if needed
+    jwt.sign(
+      payload,
+      process.env.JWT_SECRET,
+      { expiresIn: 3600 }, // Token expiration time (e.g., 1 hour)
+      (err, token) => {
+        if (err) throw err;
+        res.json({ token });
+      }
+    );
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server Error");
