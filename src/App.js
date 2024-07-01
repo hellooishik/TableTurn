@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./Components/Home";
 import About from "./Components/About";
@@ -11,6 +11,8 @@ import NotFound from "./Components/NotFound";
 import "./App.css";
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   return (
     <Router>
       <div className="App">
@@ -19,8 +21,14 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/dynamic" element={<Dynamic />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route
+            path="/login"
+            element={<Login setIsAuthenticated={setIsAuthenticated} />}
+          />
+          <Route
+            path="/register"
+            element={<Register setIsAuthenticated={setIsAuthenticated} />}
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
