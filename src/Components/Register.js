@@ -1,11 +1,11 @@
-// src/Components/Register.js
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Register = ({ setIsAuthenticated }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,9 +17,11 @@ const Register = ({ setIsAuthenticated }) => {
       });
       localStorage.setItem("token", res.data.token);
       setIsAuthenticated(true);
+      setEmail(""); // Clear email input after successful registration
+      setPassword(""); // Clear password input after successful registration
     } catch (err) {
       console.error(err);
-      alert("Error creating account");
+      setError("Error creating account"); // Display error message
     }
   };
 
@@ -29,20 +31,22 @@ const Register = ({ setIsAuthenticated }) => {
       <form onSubmit={handleSubmit}>
         <input
           type="email"
-          placeholder="email"
+          placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
         <input
           type="password"
-          placeholder="password"
+          placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
         <button type="submit">Register</button>
       </form>
+      {error && <p>{error}</p>}{" "}
+      {/* Display error message if registration fails */}
       <Link to="/">Already have an account? Login here</Link>
     </div>
   );
