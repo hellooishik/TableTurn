@@ -1,6 +1,6 @@
 // TableStruct.js
 import React from "react";
-
+// this is the reprentations of the table stuctures
 const TableStruct = ({ itemsSold, totalRevenue }) => {
   return (
     <>
@@ -37,4 +37,5 @@ const TableStruct = ({ itemsSold, totalRevenue }) => {
   );
 };
 
+// Exported the module
 export default TableStruct;

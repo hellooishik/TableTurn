@@ -1,18 +1,33 @@
 // Home.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import itemsSold from "../takeinput";
 import TableStruct from "../TableStruct";
 import "../App.css";
 
-const Home = () => {
+const Home = ({ user, setUser }) => {
   const [showTable, setShowTable] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!user) {
+      navigate("/login");
+    }
+  }, [user, navigate]);
+
+  const handleLogout = () => {
+    setUser(null);
+    navigate("/login");
+  };
 
   const totalRevenue = itemsSold.reduce(
     (acc, item) => acc + item.price * item.qty,
     0
   );
+
+  if (!user) {
+    return null; // Prevent rendering if not authenticated
+  }
 
   return (
     <div className="App">
@@ -32,6 +47,9 @@ const Home = () => {
               <Link to="/contact">Contact</Link>
             </li>
           </ul>
+          <button className="button" onClick={handleLogout}>
+            Logout
+          </button>
         </nav>
       </header>
 
@@ -42,6 +60,7 @@ const Home = () => {
             Your ultimate platform for React project showcases and source code
             distribution.
           </p>
+          {user && <p>Logged in as: {user.email}</p>}
           {!showTable ? (
             <div
               className="button animation"
