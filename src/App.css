@@ -1,6 +1,6 @@
 /* App.css */
 .App {
-  margin-top: 40vh;
+
   text-align: center;
 }
 
@@ -205,4 +205,245 @@ h1 {
   display: block;
   padding: 10px;
   white-space: pre-wrap;
+}
+
+.header {
+  background-color: #333;
+  padding: 10px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar-links li {
+  margin: 0 15px;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  background-color: #f4f4f4;
+  padding: 50px 20px;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+.slider {
+  display: flex;
+  overflow-x: scroll;
+  padding: 20px;
+  background-color: #e4e4e4;
+}
+
+.slide {
+  min-width: 300px;
+  margin: 0 10px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.information {
+  padding: 50px 20px;
+}
+
+.info-content {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+.footer a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.header {
+  background-color: #333;
+  padding: 10px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar-links li {
+  margin: 0 15px;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  background-color: #f4f4f4;
+  padding: 50px 20px;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+.slider {
+  display: flex;
+  overflow-x: scroll;
+  padding: 20px;
+  background-color: #e4e4e4;
+}
+
+.slide {
+  min-width: 300px;
+  margin: 0 10px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.information {
+  padding: 50px 20px;
+}
+
+.info-content {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+.footer a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.about-container, .contact-container {
+  padding: 50px 20px;
+}
+
+.about-container h1, .contact-container h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.contact-container {
+  padding: 50px 20px;
+}
+
+.contact-container h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.button:hover {
+  background-color: #45a049;
 }
