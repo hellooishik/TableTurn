@@ -1,0 +1,76 @@
+/* Footer.css */
+
+.footer {
+  background: linear-gradient(45deg, #3b3b3b, #1c1c1c);
+  color: #f1f1f1;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.footer-section p {
+  margin: 10px 0;
+}
+
+.footer-links {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #f1f1f1;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-links a:hover {
+  color: #ff6347; /* Change to any color you like */
+}
+
+.social-media {
+  margin-top: 15px;
+}
+
+.social-media a {
+  color: #f1f1f1;
+  margin: 0 10px;
+  font-size: 1.5em;
+  transition: color 0.3s ease-in-out;
+}
+
+.social-media a:hover {
+  color: #ff6347; /* Change to any color you like */
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+  animation: rotateBackground 15s linear infinite;
+}
+
+@keyframes rotateBackground {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -20,37 +20,6 @@ const Home = ({ user, setUser }) => {
 
   return (
     <div className="App">
-      <header className="header">
-        <nav className="navbar">
-          <ul className="navbar-links">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/dynamic">Projects</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-            {!user && (
-              <li>
-                <Link to="/login">Login</Link>
-              </li>
-            )}
-            {user && (
-              <li>
-                <button className="button" onClick={handleLogout}>
-                  Logout
-                </button>
-              </li>
-            )}
-          </ul>
-        </nav>
-      </header>
-
       <section className="hero">
         <div className="hero-content">
           <h1>Welcome to TableTurn{user && `, ${user.email}`}</h1>
