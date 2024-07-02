@@ -18,6 +18,29 @@ const Home = ({ user, setUser }) => {
     0
   );
 
+  // Testimonials data
+  const testimonials = [
+    {
+      id: 1,
+      text: "TableTurn has been instrumental in my journey as a React developer. The community support and resources available here are unparalleled.",
+      author: "John Doe",
+      position: "Full Stack Developer",
+    },
+    {
+      id: 2,
+      text: "I love how TableTurn fosters collaboration among developers. It's a great platform to showcase your projects and learn from others.",
+      author: "Jane Smith",
+      position: "Frontend Engineer",
+    },
+  ];
+
+  // Counter state
+  const [counter, setCounter] = useState({
+    projects: 25,
+    users: 1500,
+    events: 10,
+  });
+
   return (
     <div className="App">
       <section className="hero">
@@ -61,7 +84,7 @@ const Home = ({ user, setUser }) => {
         <div className="info-content">
           <h2>About TableTurn</h2>
           <p>
-            TableTurn is an Ed-Tech Omiverse aimed at creating a vibrant
+            TableTurn is an Ed-Tech Omniverse aimed at creating a vibrant
             community of React developers. Share your projects, collaborate with
             others, and learn from the best in the field.
           </p>
@@ -75,13 +98,33 @@ const Home = ({ user, setUser }) => {
         </div>
       </section>
 
-      <footer className="footer">
-        <p>&copy; 2024 TableTurn. All rights reserved.</p>
-        <p>
-          <a href="#privacy">Privacy Policy</a> |{" "}
-          <a href="#terms">Terms of Service</a>
-        </p>
-      </footer>
+      <section className="counters">
+        <div className="counter">
+          <h2>{counter.projects}</h2>
+          <p>Projects</p>
+        </div>
+        <div className="counter">
+          <h2>{counter.users}</h2>
+          <p>Users</p>
+        </div>
+        <div className="counter">
+          <h2>{counter.events}</h2>
+          <p>Events</p>
+        </div>
+      </section>
+
+      <section className="testimonials">
+        <h2>What Our Users Say</h2>
+        <div className="testimonial-list">
+          {testimonials.map((testimonial) => (
+            <div className="testimonial" key={testimonial.id}>
+              <p>{testimonial.text}</p>
+              <p className="author">{testimonial.author}</p>
+              <p className="position">{testimonial.position}</p>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 };

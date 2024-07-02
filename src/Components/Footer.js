@@ -8,7 +8,6 @@ const Footer = () => {
           <p>© 2024 TableTurn. All rights reserved.</p>
         </div>
         <div className="footer-section">
-          <p>© 2023 My App. All rights reserved.</p>
           <div className="footer-contact">
             <p>Contact us: info@myapp.com</p>
             <p>Phone: +1 234 567 890</p>

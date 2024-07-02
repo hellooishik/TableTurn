@@ -9,12 +9,18 @@ import Register from "./Register";
 import NotFound from "./NotFound";
 import Projects from "./Projects";
 import AddProject from "./AddProject";
+import logo from "../assets/logo.png"; // Import your logo image file
 import "../Navbar.css";
 
 const Navbar = ({ setIsAuthenticated }) => {
   return (
     <>
       <nav className="navbar">
+        <div className="logo">
+          <Link to="/">
+            <img src={logo} alt="Table Turn Logo" />
+          </Link>
+        </div>
         <ul className="nav-links">
           <li>
             <Link to="/">Home</Link>
