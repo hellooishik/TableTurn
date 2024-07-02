@@ -1,5 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "../css/Register.css"; // Import the CSS file
 
 const Register = ({ setIsAuthenticated }) => {
   const [email, setEmail] = useState("");
@@ -8,7 +9,7 @@ const Register = ({ setIsAuthenticated }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // the Constuctors can direct
+
     try {
       const res = await fetch("http://localhost:5000/api/auth/register", {
         method: "POST",
@@ -17,12 +18,11 @@ const Register = ({ setIsAuthenticated }) => {
         },
         body: JSON.stringify({ email, password }),
       });
-      // the set of adjectives will be set to the main frame
+
       if (!res.ok) {
         throw new Error("Network response was not ok");
       }
-      //
-      // Assuming the response indicates success, set the user as authenticated
+
       setIsAuthenticated(true);
       setEmail(""); // Clear email input after successful registration
       setPassword(""); // Clear password input after successful registration
@@ -33,28 +33,37 @@ const Register = ({ setIsAuthenticated }) => {
   };
 
   return (
-    <div>
-      <h3>Create a new account</h3>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit">Register</button>
-      </form>
-      {error && <p>{error}</p>}{" "}
-      {/* Display error message if registration fails */}
-      <Link to="/">Already have an account? Login here</Link>
+    <div className="register-container">
+      <div className="register-box">
+        <h3 className="register-title">Create a new account</h3>
+        <form className="register-form" onSubmit={handleSubmit}>
+          <div className="input-group">
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="input-group">
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          {error && <p className="error-message">{error}</p>}
+          <button type="submit" className="register-btn">
+            Register
+          </button>
+        </form>
+        <Link to="/" className="login-link">
+          Already have an account? Login here
+        </Link>
+      </div>
     </div>
   );
 };

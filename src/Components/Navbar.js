@@ -8,9 +8,9 @@ import Login from "./Login";
 import Register from "./Register";
 import NotFound from "./NotFound";
 import Projects from "./Projects";
-import AddProject from "./AddProject";
+import { AddProject, LifeCycle } from "./LifeCycle"; // Correct import for AddProject and LifeCycle
 import logo from "../assets/logo.png"; // Import your logo image file
-import "../Navbar.css";
+import "../css/Navbar.css";
 
 const Navbar = ({ setIsAuthenticated }) => {
   return (
@@ -32,19 +32,14 @@ const Navbar = ({ setIsAuthenticated }) => {
             <Link to="/projects">Projects</Link>
           </li>
           <li>
-            <Link to="/add-project">Add Project</Link>
+            <Link to="/add-project">Learning Projects</Link>
           </li>
-          <li>
-            <Link to="/dynamic">Dynamic</Link>
-          </li>
+
           <li>
             <Link to="/contact">Contact</Link>
           </li>
           <li>
             <Link to="/login">Login</Link>
-          </li>
-          <li>
-            <Link to="/register">Register</Link>
           </li>
         </ul>
       </nav>
@@ -53,6 +48,7 @@ const Navbar = ({ setIsAuthenticated }) => {
         <Route path="/about" element={<About />} />
         <Route path="/dynamic" element={<Dynamic />} />
         <Route path="/add-project" element={<AddProject />} />
+        <Route path="/life-cycle" element={<LifeCycle />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
         <Route

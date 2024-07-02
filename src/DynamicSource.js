@@ -1,11 +1,11 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
 const DynamicSource = ({ componentName }) => {
   // Example source code based on componentName
   const getSourceCode = (componentName) => {
     switch (componentName) {
-      case 'Dynamic':
+      case "Dynamic":
         return `
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';

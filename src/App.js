@@ -3,11 +3,11 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Navbar from "./Components/Navbar"; // Import Navbar component
 import Footer from "./Components/Footer"; // Import Footer component
 import "./App.css";
-import "./Footer.css";
-import "./Navbar.css";
+import "./css/Footer.css";
+import "./css/Navbar.css";
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [setIsAuthenticated] = useState(false);
 
   return (
     <Router>

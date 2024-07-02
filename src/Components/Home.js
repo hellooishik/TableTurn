@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import itemsSold from "../takeinput";
 import TableStruct from "../TableStruct";
 import "../App.css";
@@ -7,11 +7,6 @@ import "../App.css";
 const Home = ({ user, setUser }) => {
   const [showTable, setShowTable] = useState(true);
   const navigate = useNavigate();
-
-  const handleLogout = () => {
-    setUser(null);
-    navigate("/login");
-  };
 
   const totalRevenue = itemsSold.reduce(
     (acc, item) => acc + item.price * item.qty,
@@ -35,7 +30,7 @@ const Home = ({ user, setUser }) => {
   ];
 
   // Counter state
-  const [counter, setCounter] = useState({
+  const [counter] = useState({
     projects: 25,
     users: 1500,
     events: 10,

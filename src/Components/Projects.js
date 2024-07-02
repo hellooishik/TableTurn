@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import itemsSold from "../takeinput"; // Assuming this holds project data
 import TableStruct from "../TableStruct"; // Import the TableStruct component
-import "../Navbar.css";
-import "../Footer.css";
+import "../css/Navbar.css";
+import "../css/Footer.css";
 
 const Projects = () => {
   const navigate = useNavigate();
