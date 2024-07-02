@@ -8,7 +8,7 @@ const Register = ({ setIsAuthenticated }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    // the Constuctors can direct
     try {
       const res = await fetch("http://localhost:5000/api/auth/register", {
         method: "POST",
@@ -17,11 +17,11 @@ const Register = ({ setIsAuthenticated }) => {
         },
         body: JSON.stringify({ email, password }),
       });
-
+      // the set of adjectives will be set to the main frame
       if (!res.ok) {
         throw new Error("Network response was not ok");
       }
-
+      //
       // Assuming the response indicates success, set the user as authenticated
       setIsAuthenticated(true);
       setEmail(""); // Clear email input after successful registration

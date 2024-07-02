@@ -7,9 +7,7 @@ import Contact from "./Components/Contact";
 import Login from "./Components/Login";
 import Register from "./Components/Register";
 import NotFound from "./Components/NotFound";
-
 import "./App.css";
-
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
