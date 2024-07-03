@@ -14,9 +14,6 @@ router.post("/register", async (req, res) => {
     if (user) {
       return res.status(400).json({ msg: "User already exists" });
     }
-
-    // the set of adjectives is been set to the main frame work
-
     user = new User({
       email,
       password,
