@@ -29,6 +29,10 @@ const Home = ({ user, setUser }) => {
     },
   ];
 
+  // the main module will be fetched from the set of integers
+
+  // the module setData Adjustments
+
   // Counter state
   const [counter] = useState({
     projects: 25,
@@ -107,7 +111,7 @@ const Home = ({ user, setUser }) => {
           <p>Events</p>
         </div>
       </section>
-
+      {/* // this is the set of the total set  */}
       <section className="testimonials">
         <h2>What Our Users Say</h2>
         <div className="testimonial-list">

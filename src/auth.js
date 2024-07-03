@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const User = require("../models/User"); // Assuming you have a User model
-
+// the constuctor calling set
 router.post("/register", async (req, res) => {
   const { email, password } = req.body;
 
@@ -26,7 +26,7 @@ router.post("/register", async (req, res) => {
     await user.save();
 
     // You may want to generate a JWT token here for authentication
-    res.json({ token: "dummy_token" }); // Replace with actual token logic if needed
+    res.json({ token: "1.00.000.11.1144" }); // Replace with actual token logic if needed
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server Error");
