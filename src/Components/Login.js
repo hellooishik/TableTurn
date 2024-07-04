@@ -42,7 +42,7 @@ const Login = ({ setIsAuthenticated }) => {
               <div className="container">
                 <div className="row justify-content-sm-center">
                   <div className="col-md-10 col-xl-8">
-                    <h2 className="heading-decorated">Login</h2>
+                    <h5>Pro Login</h5>
                   </div>
                 </div>
               </div>
