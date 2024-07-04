@@ -4,9 +4,13 @@ import DynamicSource from "../DynamicSource"; // Import DynamicSource component
 import "../App.css";
 
 const Dynamic = () => {
+  const [userName, setUserName] = useState("");
   const [showPopup, setShowPopup] = useState(false);
   const [showCodeSnippet, setShowCodeSnippet] = useState(false);
-  const [userName, setUserName] = useState("");
+
+  const handleChange = (event) => {
+    setUserName(event.target.value);
+  };
 
   const togglePopup = () => {
     setShowPopup(!showPopup);
@@ -18,56 +22,80 @@ const Dynamic = () => {
     setShowPopup(false); // Close popup when showing code snippet
   };
 
-  const handleChange = (event) => {
-    setUserName(event.target.value);
-  };
-
   return (
-    <div className="App">
-      <div className="header">
-        <h1 className="main-heading">Welcome The Dynamic Name Writing</h1>
-        <h4 className="project-description">
-          {" "}
-          Users can personalize their interaction by entering their name,
-          triggering dynamic updates throughout the application. With features
-          like interactive popups and the ability to view source code
-          dynamically,
-        </h4>
-      </div>
+    <div className="dynamic-container">
+      <header className="header">
+        <h1 className="main-heading">Dynamic Name Writing</h1>
+        <p className="project-description">
+          Personalize your interaction by entering your name, triggering dynamic
+          updates throughout the application. Explore interactive popups and
+          view source code dynamically.
+        </p>
+      </header>
 
-      <h2>Hello {userName || "User"}</h2>
+      <nav className="breadcrumbs">
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <span>Dynamic</span>
+          </li>
+        </ul>
+      </nav>
 
-      <div className="typing-input">
-        <input
-          type="text"
-          value={userName}
-          onChange={handleChange}
-          placeholder="Start typing your name..."
-          className="input-field"
-        />
-      </div>
+      <section className="content">
+        <h2>Hello {userName || "User"}</h2>
 
-      <button className="popup-button" onClick={togglePopup}>
-        Click for Options
-      </button>
-
-      {showPopup && (
-        <div className="popup">
-          <h2>Choose an Option:</h2>
-          <button className="popup-option" onClick={handleShowSource}>
-            Show Source Code
-          </button>
-
-          <button className="close-popup" onClick={togglePopup}>
-            Close
-          </button>
+        <div className="typing-input">
+          <input
+            type="text"
+            value={userName}
+            onChange={handleChange}
+            placeholder="Start typing your name..."
+            className="input-field"
+          />
         </div>
-      )}
 
-      {showCodeSnippet && <DynamicSource componentName="Dynamic" />}
+        <button className="popup-button" onClick={togglePopup}>
+          Options
+        </button>
+
+        {showPopup && (
+          <div className="popup">
+            <h2>Choose an Option:</h2>
+            <button className="popup-option" onClick={handleShowSource}>
+              Show Source Code
+            </button>
+
+            <button className="close-popup" onClick={togglePopup}>
+              Close
+            </button>
+          </div>
+        )}
+
+        {showCodeSnippet && <DynamicSource componentName="Dynamic" />}
+      </section>
+
+      <section className="information">
+        <div className="info-item">
+          <h3>Interactive Name Input</h3>
+          <p>
+            Enter your name in the input field to see dynamic updates and
+            personalized greetings.
+          </p>
+        </div>
+        <div className="info-item">
+          <h3>Popup Options</h3>
+          <p>
+            Click the "Options" button to view additional features and show
+            source code dynamically.
+          </p>
+        </div>
+      </section>
 
       <Link to="/" className="go-back">
-        Go Back
+        <span>Go Back</span>
         <div className="bubbles-container">
           <span className="bubble"></span>
           <span className="bubble"></span>

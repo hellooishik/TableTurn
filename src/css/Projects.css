@@ -1,0 +1,137 @@
+.breadcrumb-section {
+    padding: 20px 0;
+    background-color: #f8f9fa;
+  }
+  
+  .breadcrumb {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    padding: 0 10px;
+    color: #6c757d;
+  }
+  
+  .breadcrumb-item a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .breadcrumb-item.active {
+    color: #6c757d;
+  }
+  
+  .project-grid {
+    padding: 40px 0;
+    position: relative;
+  }
+  
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .heading-decorated {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .heading-decorated::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #007bff;
+    margin: 10px auto;
+  }
+  
+  .section-subtitle {
+    text-align: center;
+    font-size: 1.25rem;
+    margin-bottom: 40px;
+    color: #6c757d;
+  }
+  
+  .grid-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  
+  .project-card {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .project-card h3 {
+    margin-bottom: 10px;
+  }
+  
+  .project-card p {
+    margin-bottom: 20px;
+    color: #6c757d;
+  }
+  
+  .button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
+  .project-table {
+    margin-top: 40px;
+  }
+  
+  .back-button {
+    display: block;
+    margin: 20px auto;
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .back-button:hover {
+    background-color: #5a6268;
+  }
+  
+  .bg-decor,
+  .bg-decor-right {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+  }
+  
+  .bg-decor {
+    left: 0;
+  }
+  
+  .bg-decor-right {
+    right: 0;
+  }
+  

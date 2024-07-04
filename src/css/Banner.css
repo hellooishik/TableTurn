@@ -1,0 +1,30 @@
+.banner-container {
+    background-color: #f0f0f0;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .banner-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .banner-text {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .banner-button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .banner-button:hover {
+    background-color: #45a049;
+  }
+  

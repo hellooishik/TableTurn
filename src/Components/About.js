@@ -6,7 +6,7 @@ import bgDecor9 from "../images/bg-decor-9.png";
 import bgDecor10 from "../images/bg-decor-10.png";
 import picI from "../assets/picI.jpg";
 
-import vintageCollage from "../assets/vintage-collage-person-doing-kayaking-road.jpg";
+import vintageCollage from "../assets/one.jpg";
 
 const About = () => {
   const features = [
