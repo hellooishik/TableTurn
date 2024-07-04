@@ -67,7 +67,7 @@ const Home = ({ user }) => {
       position: "Full Stack Developer",
     },
   ];
-  // the main module interface adjustments
+
   // Counter state
   const [counters] = useState({
     projects: 25,
@@ -92,7 +92,7 @@ const Home = ({ user }) => {
   // Initialize Swiper after component mount
   useEffect(() => {
     const swiper = new Swiper(".swiper-container", {
-      effect: "frame-trapeze",
+      effect: "slide",
       loop: true,
       autoplay: {
         delay: 5500,
@@ -114,16 +114,7 @@ const Home = ({ user }) => {
   return (
     <div className="home-container">
       {/* Swiper Slider Section */}
-      <div
-        className="swiper-container swiper-slider"
-        data-effect="frame-trapeze"
-        data-loop="true"
-        data-autoplay="5500"
-        data-speed="1200"
-        data-mousewheel="false"
-        data-keyboard="true"
-        data-frame-fill="url(#gradient1)"
-      >
+      <div className="swiper-container swiper-slider">
         <div className="swiper-wrapper">
           <div className="swiper-slide">
             <div
@@ -132,19 +123,11 @@ const Home = ({ user }) => {
                 backgroundImage:
                   "url(..assets/autism-day-with-colorful-portrait.jpg)",
               }}
-              data-swiper-anime='{"animation": "swiperSlideRotate", "duration": 2000, "delay": 600 }'
             ></div>
             <div className="swiper-slide-caption text-center context-dark">
-              <h1 data-swiper-anime='{"animation": "swiperContentStack", "duration": 1000, "delay": 500 }'>
-                TableTurn
-              </h1>
-              <h3 data-swiper-anime='{"animation": "swiperContentStack", "duration": 1000, "delay": 600 }'>
-                Design and SEO Expert
-              </h3>
-              <div
-                className="group-lg group-middle"
-                data-swiper-anime='{"animation": "swiperContentStack", "duration": 1000, "delay": 700 }'
-              ></div>
+              <h1>TableTurn</h1>
+              <h3>Design and SEO Expert</h3>
+              <div className="group-lg group-middle"></div>
             </div>
           </div>
           <div className="swiper-slide">
@@ -153,14 +136,11 @@ const Home = ({ user }) => {
               style={{
                 backgroundImage: `url(${process.env.PUBLIC_URL}../assets/hello.jpg)`,
               }}
-              data-swiper-anime='{"animation": "swiperSlideRotate", "duration": 2000, "delay": 600 }'
             ></div>
 
             <div className="swiper-slide-caption context-dark">
-              <h2 data-swiper-anime='{"animation": "swiperContentStack", "duration": 1000, "delay": 500 }'>
-                The Power of Bootstrap
-                <br className="d-none d-lg-block" /> Discover it with Element
-              </h2>
+              <h2>The Power of Bootstrap</h2>
+              <p>Discover it with Element</p>
             </div>
           </div>
           <div className="swiper-slide">
@@ -170,26 +150,17 @@ const Home = ({ user }) => {
                 backgroundImage:
                   "url(https://srv1474-files.hstgr.io/2af89e9a390ab5e2/files/public_html/wp-content/themes/cognicirege/assets/vintage-collage-person-doing-kayaking-road.jpg)",
               }}
-              data-swiper-anime='{"animation": "swiperSlideRotate", "duration": 2000, "delay": 600 }'
             ></div>
             <div className="swiper-slide-caption context-dark">
               <div className="container">
                 <div className="row justify-content-center">
                   <div className="col-lg-7">
-                    <h2 data-swiper-anime='{"animation": "swiperContentStack", "duration": 1000, "delay": 500 }'>
-                      Built by geeks & used by humans
-                    </h2>
-                    <h5
-                      className="text-width-2 block-centered"
-                      data-swiper-anime='{"animation": "swiperContentStack", "duration": 1000, "delay": 600 }'
-                    >
+                    <h2>Built by geeks & used by humans</h2>
+                    <h5>
                       Element aims to satisfy real needs of real projects. We've
                       got a pack of tools for that.
                     </h5>
-                    <div
-                      className="group-lg group-middle"
-                      data-swiper-anime='{"animation": "swiperContentStack", "duration": 1000, "delay": 700 }'
-                    ></div>
+                    <div className="group-lg group-middle"></div>
                   </div>
                 </div>
               </div>
@@ -226,10 +197,7 @@ const Home = ({ user }) => {
             Your ultimate platform for React project showcases and source code
             distribution.
           </p>
-          <div
-            className="button animation"
-            onClick={() => setShowTable(!showTable)}
-          >
+          <div className="button" onClick={() => setShowTable(!showTable)}>
             {showTable ? "Hide My Projects" : "Show My Projects"}
           </div>
         </div>
@@ -263,7 +231,6 @@ const Home = ({ user }) => {
             title: "PPC",
             iconClass: "linearicons-chart-growth",
           },
-          // the long adjutable query division overview
           {
             imgSrc:
               "https://via.placeholder.com/150/00FF00/000000?text=Social+Media",
@@ -319,15 +286,54 @@ const Home = ({ user }) => {
           <div key={index} className="additional-section">
             <h3>{section.title}</h3>
             <p>{section.content}</p>
-            <div
-              className="button"
-              onClick={() => navigate(section.actionLink)}
-            >
-              {section.actionText}
-            </div>
           </div>
         ))}
       </section>
+
+      <section className="contact-form">
+        <h2>Contact Us</h2>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleInputChange}
+            placeholder="Your Name"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleInputChange}
+            placeholder="Your Email"
+            required
+          />
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleInputChange}
+            placeholder="Your Message"
+            required
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+
+      <div className="buttons-section">
+        <button
+          className="button view-projects-button"
+          onClick={() => navigate("/projects")}
+        >
+          View Projects
+        </button>
+        <button
+          className="button explore-resources-button"
+          onClick={() => navigate("/resources")}
+        >
+          Explore Resources
+        </button>
+      </div>
     </div>
   );
 };
