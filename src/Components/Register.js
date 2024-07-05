@@ -9,9 +9,6 @@ const Register = ({ setIsAuthenticated }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // The PreventDefault functions set of integers
-
     try {
       const res = await fetch("http://localhost:5000/api/auth/register", {
         method: "POST",

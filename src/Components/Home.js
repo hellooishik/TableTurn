@@ -75,6 +75,7 @@ const Home = ({ user }) => {
     events: 10,
   });
 
+  // the
   // Additional sections data
   const additionalSections = [
     {
@@ -115,6 +116,8 @@ const Home = ({ user }) => {
       },
     });
   }, []); // Empty dependency array ensures it runs only once on mount
+
+  // dependencies mount object rendering
 
   return (
     <div className="home-container">
@@ -195,7 +198,6 @@ const Home = ({ user }) => {
           </div>
         </div>
       </section>
-
       <section className="hero">
         <div className="hero-content">
           <h1>Welcome to TableTurn{user && `, ${user.email}`}</h1>
@@ -208,9 +210,7 @@ const Home = ({ user }) => {
           </div>
         </div>
       </section>
-
       {showTable && <TableStruct itemsSold={itemsSold} />}
-
       <section className="testimonials">
         <h2>What Our Users Say</h2>
         <div className="testimonials-container">
@@ -294,36 +294,6 @@ const Home = ({ user }) => {
             <p>{section.content}</p>
           </div>
         ))}
-      </section>
-
-      <section className="contact-form">
-        <h2>Contact Us</h2>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleInputChange}
-            placeholder="Your Name"
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
-            placeholder="Your Email"
-            required
-          />
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleInputChange}
-            placeholder="Your Message"
-            required
-          />
-          <button type="submit">Submit</button>
-        </form>
       </section>
 
       <div className="buttons-section">

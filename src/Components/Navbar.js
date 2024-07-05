@@ -11,7 +11,6 @@ import Projects from "./Projects";
 import { AddProject, LifeCycle } from "./LifeCycle"; // Correct import for AddProject and LifeCycle
 import logo from "../assets/logo.png"; // Import your logo image file
 import "../css/Navbar.css";
-
 const Navbar = ({ setIsAuthenticated }) => {
   return (
     <>

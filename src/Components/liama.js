@@ -19,13 +19,9 @@ const Projects = () => {
     (total, project) => total + project.price * project.qty,
     0
   );
-
   const handleLearnMoreClick = () => {
     setShowTable(!showTable);
   };
-
-  // The more the set is been working towads the total number
-  //  the main module is been transfered for the main set of total sets
   return (
     <div>
       <section className="breadcrumb-section">
@@ -46,7 +42,6 @@ const Projects = () => {
           </ul>
         </div>
       </section>
-
       {/* this set of adjustment is been set to the t */}
       {/* the mainframe is been set to the main frame  */}
       <section className="project-grid">
@@ -55,7 +50,6 @@ const Projects = () => {
           <p className="section-subtitle">
             Explore my recent projects and their details
           </p>
-
           <div className="grid-container">
             <div className="project-card">
               <h3>Project One: Dynamic Source</h3>
@@ -84,7 +78,6 @@ const Projects = () => {
               <TableStruct itemsSold={itemsSold} totalRevenue={totalRevenue} />
             </section>
           )}
-
           <button className="back-button" onClick={() => navigate(-1)}>
             Go Back
           </button>
@@ -101,5 +94,4 @@ const Projects = () => {
     </div>
   );
 };
-
 export default Projects;

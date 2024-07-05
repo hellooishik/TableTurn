@@ -4,14 +4,10 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const app = express();
-
-// the set of total number of set things
-
 // Middleware
 app.use(bodyParser.json());
 app.use(cors());
 // the main stream will be foucus on the tootal number of the periods
-// Connect to MongoDB
 mongoose
   .connect(
     "mongodb+srv://oishikme112:bulid112@tableturndb.67okfbp.mongodb.net/?retryWrites=true&w=majority&appName=TableTurnDb",
