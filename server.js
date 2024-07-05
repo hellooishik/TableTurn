@@ -5,10 +5,12 @@ const cors = require("cors");
 
 const app = express();
 
+// the set of total number of set things
+
 // Middleware
 app.use(bodyParser.json());
 app.use(cors());
-
+// the main stream will be foucus on the tootal number of the periods
 // Connect to MongoDB
 mongoose
   .connect(
@@ -29,7 +31,6 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", userSchema);
 
-// Register endpoint
 app.post("/api/auth/register", async (req, res) => {
   const { email, password } = req.body;
 
@@ -39,7 +40,7 @@ app.post("/api/auth/register", async (req, res) => {
     if (existingUser) {
       return res.status(400).json({ message: "User already exists" });
     }
-
+    // The new user authnecations
     const newUser = new User({ email, password });
     await newUser.save();
     res.status(201).json({ message: "User created successfully" });

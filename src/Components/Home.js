@@ -67,7 +67,7 @@ const Home = ({ user }) => {
       position: "Full Stack Developer",
     },
   ];
-
+  // The set of the adjectives will be set to the main frame of the total subsets
   // Counter state
   const [counters] = useState({
     projects: 25,
@@ -82,12 +82,17 @@ const Home = ({ user }) => {
       content:
         "Join us for upcoming workshops, webinars, and hackathons. Stay tuned for exciting events!",
     },
+    // This set of adjectives
+
     {
       title: "Get Involved",
       content:
         "Contribute to open-source projects, participate in community discussions, and grow as a developer.",
     },
   ];
+
+  // React.RouterDom is been adjsustd
+  // the set of
 
   // Initialize Swiper after component mount
   useEffect(() => {
@@ -169,7 +174,8 @@ const Home = ({ user }) => {
         </div>
         <div className="swiper-pagination"></div>
       </div>
-
+      {/* the main react module will be used by the main frame of the total set of Actions */}
+      {/* react.LoopHole will be used for the total set of the React.RouterDom  */}
       {/* CTA Section */}
       <section className="section-xs section-cta bg-gray-dark text-center text-md-left">
         <div className="container">
